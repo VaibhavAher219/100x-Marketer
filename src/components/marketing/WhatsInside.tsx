@@ -1,11 +1,35 @@
 "use client";
 
-import { CheckCircle2, Star, Sparkles, Trophy, Users, BookOpen, Award, Video, Clock, CalendarDays, TerminalSquare, FileBox, Infinity } from "lucide-react";
+import { useState, useEffect } from 'react';
+import { Sparkles, Users, Award, Clock, CalendarDays, TerminalSquare, FileBox, Infinity } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+interface StarParticle {
+  left: number;
+  top: number;
+  duration: number;
+  delay: number;
+}
+
 export default function WhatsInside() {
+  const [stars, setStars] = useState<StarParticle[]>([]);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // Generate stars only on client side to avoid hydration mismatch
+    const generatedStars: StarParticle[] = [...Array(15)].map(() => ({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: 3 + Math.random() * 2,
+      delay: Math.random() * 3,
+    }));
+    
+    setStars(generatedStars);
+    setIsClient(true);
+  }, []);
+
   const features = [
     {
       icon: <CalendarDays className="w-6 h-6" />,
@@ -55,15 +79,15 @@ export default function WhatsInside() {
 
       {/* Floating Stars */}
       <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+        {isClient && stars.map((star, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-30"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `twinkle ${3 + Math.random() * 2}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 3}s`,
+              left: `${star.left}%`,
+              top: `${star.top}%`,
+              animation: `twinkle ${star.duration}s ease-in-out infinite`,
+              animationDelay: `${star.delay}s`,
             }}
           />
         ))}
@@ -82,7 +106,7 @@ export default function WhatsInside() {
           </Badge>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-            What's <span className="text-orange-500">included</span>?
+            What&apos;s <span className="text-orange-500">included</span>?
           </h2>
           
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">

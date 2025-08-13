@@ -9,12 +9,12 @@ interface AnimatedHeroBackgroundProps {
 }
 
 export default function AnimatedHeroBackground({ className = "" }: AnimatedHeroBackgroundProps) {
-  const particlesInit = useCallback(async (engine: any) => {
+  const particlesInit = useCallback(async (engine: unknown) => {
     console.log("Particles init called");
-    await loadSlim(engine);
+    await loadSlim(engine as never);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: any) => {
+  const particlesLoaded = useCallback(async (container: unknown) => {
     console.log("Particles loaded", container);
   }, []);
 

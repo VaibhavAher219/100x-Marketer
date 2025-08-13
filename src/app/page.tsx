@@ -4,7 +4,7 @@ import WhatsInside from "@/components/marketing/WhatsInside";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import ToolsSection from "@/components/marketing/ToolsSection";
 import CurriculumSection from "@/components/marketing/CurriculumSection";
-import StudentProjects from "@/components/marketing/StudentProjects";
+// import StudentProjects from "@/components/marketing/StudentProjects";
 import FAQSection from "@/components/marketing/FAQSection";
 import Footer from "@/components/shared/Footer";
 
@@ -18,7 +18,7 @@ export default function Home() {
         <WhoIsThisFor />
         <ToolsSection />
         <CurriculumSection />
-        <StudentProjects />
+        {/* <StudentProjects /> */}
         <FAQSection />
       </main>
       <Footer />

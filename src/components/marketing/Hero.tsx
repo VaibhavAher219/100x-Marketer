@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import AnimatedHeroBackground from "./AnimatedHeroBackground";
+
 import SimpleFallbackBackground from "./SimpleFallbackBackground";
 import SocialProof from "./SocialProof";
 
@@ -39,7 +39,7 @@ export default function Hero() {
             </p>
             
             <p className="text-lg text-gray-500">
-              It's free.
+              It&apos;s free.
             </p>
           </div>
           

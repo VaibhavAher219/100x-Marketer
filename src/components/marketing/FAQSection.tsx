@@ -41,7 +41,7 @@ export default function FAQSection() {
           
           {/* Title */}
           <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
-            You'll have <span className="text-blue-600">questions!</span>
+            You&apos;ll have <span className="text-blue-600">questions!</span>
           </h2>
           
           {/* Subtitle */}

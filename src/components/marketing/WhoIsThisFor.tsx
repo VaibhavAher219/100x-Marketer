@@ -1,4 +1,4 @@
-import { CheckCircle2, Bot, BrainCircuit, Code, Github, Figma } from "lucide-react";
+import { CheckCircle2, Bot, BrainCircuit, Code } from "lucide-react";
 
 export default function WhoIsThisFor() {
   return (
@@ -8,7 +8,7 @@ export default function WhoIsThisFor() {
           {/* Left Column - Text */}
           <div className="flex-1">
             <h2 className="text-3xl font-bold mb-6">
-              This course is ideal if you're
+              This course is ideal if you&apos;re
             </h2>
             
             <ul className="flex flex-col gap-y-3">

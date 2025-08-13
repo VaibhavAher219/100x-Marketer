@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+import Image from "next/image";
 
 export default function SocialProof() {
   const logos = ['meta', 'hubspot', 'shopify', 'salesforce', 'netflix', 'airbnb', 'google', 'uber'];
@@ -12,10 +13,12 @@ export default function SocialProof() {
         
         <Marquee gradient={true} gradientColor="[249, 249, 249]" speed={40}>
           {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
-            <img
+            <Image
               key={index}
               src={`/logos/${logo}.png`}
               alt={`${logo} logo`}
+              width={80}
+              height={40}
               className="w-20 mx-10 filter grayscale hover:grayscale-0 transition-all duration-300"
             />
           ))}
